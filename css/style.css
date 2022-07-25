@@ -1,0 +1,119 @@
+/* start global rules */
+html {
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+}
+
+h1 { 
+    padding: 0;
+    margin: 0;
+    font-size: 3rem;
+}
+
+p { 
+    font-size: 2rem;
+    line-height: 2.5rem;
+}
+
+:root {
+    --clr-main: #ff9800;
+}
+/* end global rules */
+
+/* start landing page */
+.landing-page {
+    min-height: 100vh;
+    background-image: url('../images/img1.jpg');
+    background-size: cover;
+    background-position: bottom;
+}
+
+.landing-page .overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.landing-page header {
+    color: #fff;
+    z-index: 2;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.landing-page header .logo {
+    font-weight: 700;
+}
+
+.landing-page .nav-links {
+    list-style: none;
+    display: flex;
+    width: 30%;
+    justify-content: space-between;
+}
+
+.landing-page header a{
+    text-decoration: none;
+    font-size: 2rem;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.landing-page .nav-links li a:hover {
+    color: var(--clr-main);
+}
+.landing-page .introduction-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+    color: #fff;
+}
+
+.landing-page .introduction-text h1{
+    margin-bottom: 2rem;
+}
+
+.landing-page .introduction-text h1 span {
+    color: var(--clr-main);
+}
+/* end landing page */
+
+/* start settings box */
+.settings-box {
+    width: 15vw;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: -15vw;
+    padding: 1rem;
+    transition: 0.3s;
+}
+
+.settings-box.open {
+    left: 0;
+}
+
+.settings-box .clr-changer .gear-icon {
+    position: absolute;
+    right: -40px;
+    top: 150px;
+    font-size: 2rem;
+    padding: 1rem;
+    background-color: #fff;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    cursor: pointer;
+}
+/* end settings box */
