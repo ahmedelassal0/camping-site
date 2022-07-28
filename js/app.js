@@ -8,12 +8,21 @@ const settingsBox = document.querySelector('.settings-box');
 const colors = document.querySelectorAll('.colors-list li');
 const root = document.querySelector(':root');
 const changeBgBtns = document.querySelectorAll('.change-bg button');
+
+// variables
+let randomBginterval;
 // functions
 //random bg images
-    setInterval(() => {
-        const rand = Math.floor(Math.random() * 5) + 1;
-        landingPage.style.backgroundImage = `url("images/img${rand}.jpg")`;
-    }, 10000)
+function randomBg() {
+    if (window.localStorage.getItem('changeBg') === 'yes') { 
+        randomBginterval = setInterval(() => {
+            const rand = Math.floor(Math.random() * 5) + 1;
+            landingPage.style.backgroundImage = `url("images/img${rand}.jpg")`;
+        }, 10000)
+    }
+    else
+        clearInterval(randomBginterval);
+}
 // open settings box
 gearContainer.addEventListener('click', () => {
     settingsBox.classList.toggle('open');
@@ -45,6 +54,10 @@ colors.forEach(color => {
 // control changing background
 changeBgBtns.forEach(btn => {
     btn.addEventListener('click', () => {
+        // save change bg option to local storage
+        window.localStorage.setItem('changeBg', btn.dataset.changeBg);
+        // function to check for change bg
+        randomBg();
         // remove active class from all btns
          changeBgBtns.forEach(btn => {
             btn.classList.remove('active');
@@ -64,4 +77,14 @@ window.onload = function () {
         if(color.dataset.color === window.localStorage.mainColor) 
             color.classList.add('active');
     })
+
+    // function to check for change bg
+    randomBg();
+
+    // add class active to active btn
+    changeBgBtns.forEach(btn => {          
+            if(window.localStorage.getItem('changeBg')  === btn.dataset.changeBg) {
+                btn.classList.add('active');
+            }
+        })   
 }
