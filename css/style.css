@@ -90,13 +90,13 @@ p {
 
 /* start settings box */
 .settings-box {
-    width: 15vw;
+    width: 250px;
     height: 100vh;
     background-color: #fff;
     z-index: 9999;
     position: fixed;
     top: 0;
-    left: -15vw;
+    left: -250px;
     padding: 1rem;
     transition: 0.3s;
 }
@@ -105,7 +105,7 @@ p {
     left: 0;
 }
 
-.settings-box .clr-changer .gear-icon {
+.settings-box .gear-container {
     position: absolute;
     right: -40px;
     top: 150px;
@@ -116,4 +116,74 @@ p {
     border-bottom-right-radius: 1rem;
     cursor: pointer;
 }
+
+.settings-box .option-box {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #eee;
+    height: 100px;
+    padding: 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.settings-box .option-box h4 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.settings-box .option-box .colors-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.settings-box .option-box .colors-list li {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.settings-box .option-box .colors-list li.active {
+    opacity: 1;
+    border: 2px solid #fff;
+    box-sizing: content-box;
+}
+
+.settings-box .option-box .colors-list li:nth-child(1) {
+    background-color: #ff9800;
+}
+
+.settings-box .option-box .colors-list li:nth-child(2) {
+    background-color: #e91e63;
+}
+.settings-box .option-box .colors-list li:nth-child(3) {
+    background-color: #009688;
+}
+.settings-box .option-box .colors-list li:nth-child(4) {
+    background-color: #03a9f4;
+}
+.settings-box .option-box .colors-list li:nth-child(5) {
+    background-color: #4caf50;
+}
+
+.settings-box .option-box button {
+    width: 40%;
+    height: 2rem;
+    background-color: #eee;
+    color: #333;
+    font-weight: 700;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.settings-box .option-box button.active {
+    color: #eee;
+    background-color: #333;
+}
+
 /* end settings box */
