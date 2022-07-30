@@ -8,7 +8,8 @@ const settingsBox = document.querySelector('.settings-box');
 const colors = document.querySelectorAll('.colors-list li');
 const root = document.querySelector(':root');
 const changeBgBtns = document.querySelectorAll('.change-bg button');
-
+const bestOffer = document.querySelector('.best-offer');
+const progresses = document.querySelectorAll('.progress-container span');
 // variables
 let randomBginterval;
 // functions
@@ -68,6 +69,13 @@ changeBgBtns.forEach(btn => {
     })
 })
 
+window.addEventListener('scroll', () => {
+    if(window.scrollY >= bestOffer.offsetTop - bestOffer.offsetHeight)
+    progresses.forEach(progress => {
+        progress.style.width = progress.dataset.percentage;
+    })
+})
+// what will be the fisrt thing to happen when the page load
 window.onload = function () {
     // setting main color equal to local storage color onload the page
     root.style.setProperty('--clr-main', window.localStorage.getItem('mainColor'));

@@ -192,6 +192,7 @@ p {
 }
 /* end landing page */
 
+ /* start about us section */
 .about .container {
     display: flex;
     align-items: center;
@@ -207,3 +208,52 @@ p {
     color: var(--clr-main);
     margin-bottom: 2rem;
 }
+/* end about us section */
+
+/* start best offer section */
+.best-offer {
+    text-align: center;
+    background-color: #eee;
+    padding: 2rem;
+}
+
+.best-offer h2 {
+    font-size: 3rem;
+}
+
+.best-offer h4 {
+    font-size: 2rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.best-offer .offer-box {
+    background-color: #fff;
+    padding: 2rem;
+    margin: 2rem;
+}
+
+.best-offer .offer-box .offer-portion {
+    background-color: #eee;
+    margin: 2rem 0;
+    text-align: start;
+    padding: 2rem;
+}
+
+.best-offer .offer-box .offer-portion .progress-container {
+    height: 20px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    padding: 0.2rem;
+}
+
+.best-offer .offer-box .offer-portion .progress-container span {
+    display: block;
+    height: 100%;
+    width: 0;
+    background-color: var(--clr-main);
+    border-radius: 0.5rem;
+    transition: 1.5s;
+}
+/* end best offer section */
