@@ -10,6 +10,7 @@ const root = document.querySelector(':root');
 const changeBgBtns = document.querySelectorAll('.change-bg button');
 const bestOffer = document.querySelector('.best-offer');
 const progresses = document.querySelectorAll('.progress-container span');
+const galleryImages = document.querySelectorAll('.gallery .imgs-box img');
 // variables
 let randomBginterval;
 // functions
@@ -69,12 +70,51 @@ changeBgBtns.forEach(btn => {
     })
 })
 
+// animate best offers section
 window.addEventListener('scroll', () => {
     if(window.scrollY >= bestOffer.offsetTop - bestOffer.offsetHeight)
     progresses.forEach(progress => {
         progress.style.width = progress.dataset.percentage;
     })
 })
+
+// showing clicked image on a pop up div
+galleryImages.forEach(img => {
+    img.addEventListener('click', () => {
+        // adding overlay to the body
+        const overlay = document.createElement('div');
+        overlay.classList.add('popup-overlay');
+        document.body.append(overlay);
+
+        // creating popup div and put image in it
+        const popupBox = document.createElement('div');
+        popupBox.classList.add('popup-box')
+        document.body.append(popupBox);
+
+        // showing choosen image and display it in the box
+        const popImg = document.createElement('img');
+        popImg.classList.add('popup-img');
+        popImg.src = img.src;
+        popupBox.append(popImg);
+
+        // creating close btn
+        const closeBox = document.createElement('div');
+        closeBox.classList.add('close-box');
+        popupBox.append(closeBox);
+        const closeIcon = document.createElement('span');
+        closeIcon.classList.add('close-icon');
+        closeIcon.innerText = 'x';
+        closeBox.append(closeIcon);
+    })
+})
+
+document.addEventListener('click', e => {
+    if(e.target.className === 'close-box') {
+        e.target.parentNode.remove();
+        document.querySelector('.popup-overlay').remove();
+    }
+})
+
 // what will be the fisrt thing to happen when the page load
 window.onload = function () {
     // setting main color equal to local storage color onload the page

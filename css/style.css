@@ -30,7 +30,7 @@ p {
     width: 250px;
     height: 100vh;
     background-color: #fff;
-    z-index: 9999;
+    z-index: 999;
     position: fixed;
     top: 0;
     left: -250px;
@@ -257,3 +257,67 @@ p {
     transition: 1.5s;
 }
 /* end best offer section */
+
+/* start our gallery section */
+.gallery {
+    padding: 5rem;
+    text-align: center;
+}
+
+.gallery .container h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.gallery .container .imgs-box img {
+    width: 200px;
+    height: 112.5px;
+    padding: 3px;
+    border: 1px solid #ccc;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.popup-overlay {
+    background-color: rgb(51, 51, 51, 0.6);
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.popup-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    z-index: 10000;
+    padding: 3rem;
+    width: 100rem;
+}
+.popup-img {
+    max-width: 100%;
+}
+
+.popup-box .close-box {
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--clr-main);
+    top: -40px;
+    right: 0;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;    
+}
+
+.popup-box .close-box .close-icon {
+    pointer-events: none;
+}
+/* end our gallery section */
